@@ -68,7 +68,7 @@ func setField(field reflect.Value, defaultVal string) error {
 			}
 		}
 	case reflect.Slice:
-		fmt.Println(field.Type().String())
+
 		if field.Type().String() == "[]uint8" {
 			field.Set(reflect.ValueOf([]byte(defaultVal)).Convert(field.Type()))
 		} else if field.Type().String() == "[]string" {
